@@ -150,11 +150,6 @@ PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh \
     vendor.qti.hardware.memtrack-service \
-    AdvancedDisplay
-
-# Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
 
 # DRM
 PRODUCT_PACKAGES += \

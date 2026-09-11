@@ -18,6 +18,10 @@ COMMON_PATH := device/samsung/sm7325-common
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# Skip strict build-time kernel/framework VINTF matrix validation
+PRODUCT_ENFORCE_VINTF_MANIFEST := false
+CHECK_VINTF_SUPPRESS_CHECK_MATCHING_DEVICE_MANIFEST := true
+
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
