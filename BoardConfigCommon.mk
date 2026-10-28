@@ -16,12 +16,6 @@
 
 COMMON_PATH := device/samsung/sm7325-common
 
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# Skip strict build-time kernel/framework VINTF matrix validation
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
-CHECK_VINTF_SUPPRESS_CHECK_MATCHING_DEVICE_MANIFEST := true
-
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -168,6 +162,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung_sm7325
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # SePolicy
+include device/lineage/sepolicy/libion/sepolicy.mk
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor

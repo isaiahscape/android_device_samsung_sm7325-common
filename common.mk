@@ -99,7 +99,14 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
     libvolumelistener \
-    libqti_vndfwk_detect.vendor:32
+    libqti_vndfwk_detect.vendor:32 \
+    libsamsungSoundbooster_plus \
+    SoundBoosterStage \
+    SamsungDAP
+
+$(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsung/sm7325-common:lib_SoundBooster_ver1050)
+
+TARGET_EXCLUDES_AUDIOFX := true
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/configs/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -126,6 +133,7 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
 $(call soong_config_set,samsungCameraVars,extra_ids,54) # ID=54 is macro
+$(call soong_config_set_bool,samsungCameraVars,needs_sec_qcom_reserved_field,true)
 
 # CAS
 PRODUCT_PACKAGES += \
@@ -157,9 +165,6 @@ PRODUCT_PACKAGES += \
 
 # Fastboot
 TARGET_BOARD_FASTBOOT_INFO_FILE := $(LOCAL_PATH)/fastboot-info.txt
-
-PRODUCT_PACKAGES += \
-    fastbootd
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -198,6 +203,9 @@ PRODUCT_COPY_FILES += \
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
+
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -364,7 +372,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel \
+    hardware/google/pixel/power-libperfmgr \
     hardware/samsung
 
 # Inherit proprietary blobs
