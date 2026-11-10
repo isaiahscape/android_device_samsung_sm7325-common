@@ -198,6 +198,9 @@ PRODUCT_COPY_FILES += \
 # IMS
 $(call inherit-product, hardware/lineage/generic-ims/ims.mk)
 
+PRODUCT_PACKAGES += \
+    CarrierSettingsOverlayCommon
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
