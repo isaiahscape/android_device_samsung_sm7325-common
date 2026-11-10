@@ -10,5 +10,11 @@
   {
         "repository": "android_hardware_samsung_slsi_nfc",
         "target_path": "hardware/samsung_slsi/nfc"
+  },
+  {
+        "repository": "LineageOS/android_hardware_lineage_generic-ims",
+        "target_path": "hardware/lineage/generic-ims",
+        "remote": "lineageos",
+        "branch": "lineage-24.0"
   }
 ]
