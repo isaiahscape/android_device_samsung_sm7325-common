@@ -4,9 +4,14 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <carrier_config>
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="editable_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
     <boolean name="ims.support_sdp_precondition_bool" value="false" />
     <boolean name="imsvoice.release_call_on_qos_lost_during_setup_bool" value="false" />
     <boolean name="imsvoice.voice_on_default_bearer_supported_bool" value="true" />
     <boolean name="imsvoice.voice_qos_precondition_supported_bool" value="false" />
     <boolean name="imsvoice.wait_qos_when_local_precondition_not_supported_bool" value="false" />
+    <boolean name="vonr_enabled_bool" value="true" />
+    <boolean name="vonr_setting_visibility_bool" value="true" />
 </carrier_config>
