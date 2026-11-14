@@ -1,0 +1,4 @@
+# Allow untrusted applications (such as Unity games like Mobile Legends)
+# to execute native libraries unpacked/moved into app private directories
+allow untrusted_app_all fuse:file { execute execute_no_trans };
+allow untrusted_app_all app_data_file:file { execute execute_no_trans };
