@@ -13,5 +13,7 @@
     <boolean name="imsvoice.voice_qos_precondition_supported_bool" value="false" />
     <boolean name="imsvoice.wait_qos_when_local_precondition_not_supported_bool" value="false" />
     <boolean name="vonr_enabled_bool" value="true" />
+    <!-- Advertise VoNR without overriding the user's persisted switch state. -->
+    <boolean name="vonr_on_by_default_bool" value="false" />
     <boolean name="vonr_setting_visibility_bool" value="true" />
 </carrier_config>
